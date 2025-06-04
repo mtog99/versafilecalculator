@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VersaFile Docuflow ROI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Docuflow ROI Calculator</h1>
+
+        <div class="input-section">
+            <h2>Your Current Operations:</h2>
+
+            <div class="input-group">
+                <label for="monthlyDocuments">Monthly Documents Processed:</label>
+                <input type="number" id="monthlyDocuments" value="50000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="timePerDocument">Avg. Time Spent per Document (minutes):</label>
+                <input type="number" id="timePerDocument" value="3" min="0" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label for="hourlyCost">Avg. Employee Hourly Cost ($):</label>
+                <input type="number" id="hourlyCost" value="60" min="0" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="manualErrorRate">Manual Error Rate (%):</label>
+                <input type="number" id="manualErrorRate" value="5" min="0" max="100" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label for="auditPrepTime">Avg. Annual Audit Prep Time (hours):</label>
+                <input type="number" id="auditPrepTime" value="40" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="annualStorageCost">Annual Document Storage Cost ($):</label>
+                <input type="number" id="annualStorageCost" value="15000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="annualLegacyIntegrationCost">Annual Legacy Integration/Maintenance Cost ($):</label>
+                <input type="number" id="annualLegacyIntegrationCost" value="20000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="implementationCost">Estimated Docuflow Implementation Cost ($):</label>
+                <input type="number" id="implementationCost" value="75000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="annualSubscriptionCost">Annual Docuflow Subscription Cost ($):</label>
+                <input type="number" id="annualSubscriptionCost" value="30000" min="0">
+            </div>
+        </div>
+
+        <button onclick="calculateROI()">Calculate ROI</button>
+
+        <div class="results-section">
+            <h2>Estimated Annual Savings:</h2>
+            <p>Automated Processing Labor Savings: <span id="laborSavings">$0.00</span></p>
+            <p>Error Reduction Savings: <span id="errorSavings">$0.00</span></p>
+            <p>Compliance Cost Reduction: <span id="complianceSavings">$0.00</span></p>
+            <p>Storage Cost Reduction: <span id="storageSavings">$0.00</span></p>
+            <p>Integration & Maintenance Savings: <span id="integrationSavings">$0.00</span></p>
+            <p class="total-savings">Total Annual Savings: <span id="totalAnnualSavings">$0.00</span></p>
+
+            <h2>Overall ROI Metrics (Over 3 Years):</h2>
+            <p>Payback Period: <span id="paybackPeriod">0 months</span></p>
+            <p>3-Year ROI: <span id="roiPercentage">0%</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
